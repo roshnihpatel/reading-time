@@ -16,7 +16,8 @@ if (article) {
   // Support for API reference docs
   const heading = article.querySelector("h1");
   // Support for article docs with date
+  // ? optional chaining, if time is undefined or null will eavluate as null instead of throwing an error
   const date = article.querySelector("time")?.parentNode;
-
+  // ?? nullish coalescing returns rhs if lhs evaluates to null 
   (date ?? heading).insertAdjacentElement("afterend", badge);
 }
